@@ -100,10 +100,8 @@ This will create the SQLite database and populate it with sample fitness classes
 
 ```bash
 # Development server
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --port 8000
 
-# Production server
-uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 The API will be available at: `http://localhost:8000`
@@ -228,17 +226,6 @@ GET /health             # Health check
 pytest
 ```
 
-### Run Specific Test Files
-```bash
-pytest tests/test_main.py -v
-pytest tests/test_crud.py -v
-```
-
-### Test Coverage
-```bash
-pytest --cov=app tests/
-```
-
 ## 📝 Sample API Requests
 
 ### Using cURL
@@ -299,10 +286,10 @@ curl "http://localhost:8000/classes?timezone=Asia/Tokyo"
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `DATABASE_URL` | SQLite database file path | `sqlite:///./fitness_studio.db` |
-| `TIMEZONE` | Default timezone for the application | `Asia/Kolkata` |
+| Variable       | Description                      | Default                         |
+|----------------|----------------------------------|---------------------------------|
+| `DATABASE_URL` | SQLite database file path        | `sqlite:///./fitness_studio.db` |
+| `TIMEZONE`     | Default timezone for application | `Asia/Kolkata`                  |
 
 ### Database Schema
 
